@@ -1,35 +1,26 @@
 {
-  "background": {
-    "scripts": ["ext-onetab-concatenated-sources-background.js"]
-  },
-  "browser_action": {
-    "default_icon": {
-      "19": "images/icon19.png",
-      "38": "images/icon38.png"
-    }
-  },
-  "content_scripts": [
-    {
-      "js": ["ext-onetab-concatenated-sources-contentscript.js"],
-      "matches": ["http://*/*", "https://*/*"]
-    }
-  ],
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "name": "OneTabR",
   "description": "Save up to 95% memory and reduce tab clutter",
-  "icons": {
-    "128": "images/extension-icon128.png",
-    "16": "images/extension-icon16.png",
-    "48": "images/extension-icon48.png"
+  "version": "0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
   },
-  "manifest_version": 2,
-  "name": "OneTab",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/get_started16.png",
+      "32": "/images/get_started32.png",
+      "48": "/images/get_started48.png",
+      "128": "/images/get_started128.png"
+    }
+  },
   "options_page": "options.html",
-  "permissions": [
-    "tabs",
-    "\u003Call_urls>",
-    "webRequest",
-    "webRequestBlocking",
-    "contextMenus"
-  ],
-  "version": "0.1"
+  "icons": {
+    "16": "/images/get_started16.png",
+    "32": "/images/get_started32.png",
+    "48": "/images/get_started48.png",
+    "128": "/images/get_started128.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"]
 }
